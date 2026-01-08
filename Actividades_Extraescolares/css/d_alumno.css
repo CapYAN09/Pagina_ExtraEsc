@@ -1,0 +1,74 @@
+#topbar{
+    background-color: brown;
+    display: flex;
+}
+
+#logo{
+    padding-top: 0.5%;
+    width: 67pt;
+}
+
+h2{
+    color: azure;
+    padding-top: 1%;
+}
+
+.h1-titulos{
+    color: azure;
+}
+
+.salir{
+    margin-left: 5%;
+    height: 50pt;
+    width: 120pt;
+    border-radius: 5pt;
+    background-color: brown;
+    border: none;
+    margin-left: auto;
+    float: right;
+}
+
+#inscripcion-banner{
+    background: url("../imagenes/fondo_index.jpg");
+    height: 380px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+#deportivas-banner{
+    background-color:cadetblue;
+    height: 170px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+#culturales-banner{
+    background-color:darkgreen;
+    height: 170px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+#registradas-banner{
+    background-color:yellowgreen;
+    height: 170px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+input{
+    width: 80px;
+    height: 35px;
+    border-radius: 5pt;
+    border: none;
+}
+
+button{
+    width: 110pt;
+    border-radius: 5pt;
+    border: none;
+}
