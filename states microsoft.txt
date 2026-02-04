@@ -1,0 +1,5 @@
+Id. de aplicación (cliente): 874e3077-bc80-405b-ac6d-9e52f5a27afb
+Identificador de objeto: 36192541-2d8f-4965-bc68-c9a93e5fa8b7
+Id. de directorio (inquilino) tenantID: 63de1475-1a48-4463-aff2-b2581f2a972e
+
+MVClient-secret: ONy8Q~3XwccWD5mmWfAdQdiZ6CystGx.1xNnhcZ5
