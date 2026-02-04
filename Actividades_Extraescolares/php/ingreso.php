@@ -38,9 +38,9 @@ try {
     }
 
     // -------------------------------------
-    // 3️⃣ Buscar en tabla alumnos
+    // Buscar en tabla alumnos
     // -------------------------------------
-    $sqlAlumnos = "SELECT * FROM alumnos WHERE usuario = :usuario AND contraseña = :password";
+    /*$sqlAlumnos = "SELECT * FROM alumnos WHERE usuario = :usuario AND contraseña = :password";
     $stmt = $pdo->prepare($sqlAlumnos);
     $stmt->execute([
         'usuario' => $usuario,
@@ -51,14 +51,14 @@ try {
         // Usuario es alumno rezagado → ir a alumno.html
         header("Location: ../alumno.html");
         exit();
-    }
+    }*/
 
     // Si llega aquí, no existe el usuario
-    header("Location: ../index.html?error=1");
+    header("Location: ../index.php?error=1");
     exit();
 
 } catch (PDOException $e) {
-    header("Location: ../index.html?error=1");
+    header("Location: ../index.php?error=1");
     exit();
 }
 

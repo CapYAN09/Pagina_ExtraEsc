@@ -1,5 +1,11 @@
 <?php
+session_start();
+// Destruir sesión local
+session_unset();
 session_destroy();
-header("Location: ../index.html");
+
+$logoutUrl = "https://actividadesextraescolares.aguascalientes.tecnm.mx/";
+
+header("Location: $logoutUrl");
 exit();
 ?>

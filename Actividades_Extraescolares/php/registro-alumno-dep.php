@@ -17,28 +17,34 @@ $options = [
 
 try {
     // Verificar sesión
-    if (!isset($_SESSION["usuario"])) { 
+    /*if (!isset($_SESSION["usuario"])) { 
+        header("Location: ../alumno.html"); 
+        exit(); 
+    }*/
+    
+    if (!isset($_SESSION['user_email'])) { 
         header("Location: ../alumno.html"); 
         exit(); 
     }
 
     $pdo = new PDO($dsn, $user, $pass, $options);
 
-    $usuario = $_SESSION["usuario"];
+    //$usuario = $_SESSION["usuario"];
+    $usuario = $_SESSION['user_email'];
     $id_actividad = $_POST['id_deportivo'] ?? '';
 
     if (empty($id_actividad)) {
         die("ID de actividad no recibido");
     }
 
-    // 🔒 Iniciar transacción
+    // Iniciar transacción
     $pdo->beginTransaction();
 
-    // 1️⃣ Verificar si YA está inscrito
+    // Verificar si YA está inscrito
     $sqlExiste = "
         SELECT 1
         FROM actividades_alumnos_deportivas
-        WHERE usuario = :usuario
+        WHERE correo = :usuario
         LIMIT 1
         FOR UPDATE
     ";
@@ -53,7 +59,7 @@ try {
         exit();
     }
 
-    // 2️⃣ Verificar capacidad disponible
+    // Verificar capacidad disponible
     $sqlCapacidad = "
         SELECT capacidad
         FROM actividades_deportivas
@@ -76,9 +82,9 @@ try {
         exit();
     }
 
-    // 3️⃣ Insertar inscripción
+    // Insertar inscripción
     $sqlInsert = "
-        INSERT INTO actividades_alumnos_deportivas (usuario, id_deportivo)
+        INSERT INTO actividades_alumnos_deportivas (correo, id_deportivo)
         VALUES (:usuario, :id)
     ";
     $stmtInsert = $pdo->prepare($sqlInsert);
@@ -87,7 +93,7 @@ try {
         'id' => $id_actividad
     ]);
 
-    // 4️⃣ Reducir capacidad
+    // Reducir capacidad
     $sqlUpdate = "
         UPDATE actividades_deportivas
         SET capacidad = capacidad - 1
@@ -96,7 +102,7 @@ try {
     $stmtUpdate = $pdo->prepare($sqlUpdate);
     $stmtUpdate->execute(['id' => $id_actividad]);
 
-    // ✅ Confirmar cambios
+    // Confirmar cambios
     $pdo->commit();
 
     $_SESSION['mensaje'] = "Te has registrado correctamente, ahora puedes verificarlo en actividades registradas";
@@ -105,7 +111,7 @@ try {
 
 } catch (Exception $e) {
 
-    // ❌ Revertir si algo falla
+    // Revertir si algo falla
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }

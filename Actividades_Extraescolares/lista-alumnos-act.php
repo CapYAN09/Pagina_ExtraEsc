@@ -21,7 +21,7 @@ $options = [
         $pdo = new PDO($dsn, $user, $pass, $options); 
 
         if($tipo == "deportivo"){ 
-            $sql_lista = "SELECT id, usuario, id_deportivo FROM actividades_alumnos_deportivas WHERE id_deportivo = $id"; 
+            $sql_lista = "SELECT id, correo, id_deportivo FROM actividades_alumnos_deportivas WHERE id_deportivo = $id"; 
             $stmLista = $pdo->prepare($sql_lista); 
             $stmLista->execute(); 
             $alumnos = $stmLista->fetchAll(PDO::FETCH_ASSOC);
@@ -31,7 +31,7 @@ $options = [
             $actividad = $stmData->fetchAll(PDO::FETCH_ASSOC);
         }else{
             if($tipo == "cultural"){
-                $sql_lista = "SELECT id, usuario, id_cultural FROM actividades_alumnos_culturales WHERE id_cultural = $id"; 
+                $sql_lista = "SELECT id, correo, id_cultural FROM actividades_alumnos_culturales WHERE id_cultural = $id"; 
                 $stmLista = $pdo->prepare($sql_lista); 
                 $stmLista->execute(); 
                 $alumnos = $stmLista->fetchAll(PDO::FETCH_ASSOC);
@@ -95,12 +95,12 @@ $options = [
             <?php foreach ($alumnos as $aln): ?>
             <tr id="filas-tabla">
                 <td><?= $aln["id"] ?></td>
-                <td><?= htmlspecialchars($aln["usuario"]) ?></td>
-                <td><a href="actualizar-act-alumno.php?usuario=<?= $aln["usuario"] ?>&tipo=<?= $tipo ?>&act=<?= $id ?>">Cambiar</a></td>
+                <td><?= htmlspecialchars($aln["correo"]) ?></td>
+                <td><a href="actualizar-act-alumno.php?usuario=<?= $aln["correo"] ?>&tipo=<?= $tipo ?>&act=<?= $id ?>">Cambiar</a></td>
                 <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 data-act="<?= $id ?>"
                 data-id="<?= $aln["id"] ?>"
-                data-usuario="<?= $aln["usuario"] ?>"
+                data-usuario="<?= $aln["correo"] ?>"
                 data-tipo="<?= $tipo ?>">Eliminar</a></td>
             </tr>
             <?php endforeach; ?>

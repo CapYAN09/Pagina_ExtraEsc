@@ -28,7 +28,7 @@ try{
     $id_actividadD = $_POST['id_deportivo'] ?? '';
     $id_actividadC = $_POST['id_cultural'] ?? '';
 
-    // 🔒 Iniciar transacción
+    // Iniciar transacción
     $pdo->beginTransaction();
 
     if (empty($id_actividadD) && empty($id_actividadC)) {
@@ -71,7 +71,7 @@ try{
 
 }catch(Exception $e){
 
-    // ❌ Revertir si algo falla
+    // Revertir si algo falla
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }

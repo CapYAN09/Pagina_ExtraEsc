@@ -15,7 +15,7 @@
     <div id="topbar">
         <img src="imagenes/logo_ita.png" alt="logo_ita" id="logo">
         <h2 style="color: azure;">Actividades Extraescolares</h2>
-        <button class="regresar" style="color: azure;" onclick="window.location.href='alumno.html'"><h5>Regresar</h5></button>
+        <button class="regresar" style="color: azure;" onclick="window.location.href='/alumno.html'"><h5>Regresar</h5></button>
     </div>
     <?php if (!empty($_SESSION['mensaje'])): ?>
         <div class="alert alert-warning alert-dismissible fade show text-center mx-5 mt-3" role="alert">

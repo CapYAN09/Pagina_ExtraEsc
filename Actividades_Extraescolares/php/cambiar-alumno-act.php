@@ -30,17 +30,17 @@ $options = [
         $id_seleccionado = $_POST['id_nueva'];
         $alumno = $_POST['usuario'];
 
-        // 🔒 Iniciar transacción
+        // Iniciar transacción
         $pdo->beginTransaction();
 
         if($tipo_act == "deportivo"){ 
-            $sqlEliminarInicial = "DELETE FROM actividades_alumnos_deportivas WHERE usuario = :usuario AND id_deportivo = :id";
+            $sqlEliminarInicial = "DELETE FROM actividades_alumnos_deportivas WHERE correo = :usuario AND id_deportivo = :id";
                 $stmEliminar = $pdo->prepare($sqlEliminarInicial);
                 $stmEliminar->execute([
                 'usuario' => $alumno,
                 'id' => $id_actividadInicial
                 ]);
-                // 4️⃣ Aumentar capacidad
+                // Aumentar capacidad
                 $sqlUpdate = "
                     UPDATE actividades_deportivas
                     SET capacidad = capacidad + 1
@@ -48,8 +48,8 @@ $options = [
                 ";
                 $stmtUpdate = $pdo->prepare($sqlUpdate);
                 $stmtUpdate->execute(['id' => $id_actividadInicial]);
-                // 4️⃣ Insertar nuevo dato
-                $sqlInsertar = "INSERT INTO actividades_alumnos_deportivas(usuario,id_deportivo) VALUES (:usuario, :id)";
+                // Insertar nuevo dato
+                $sqlInsertar = "INSERT INTO actividades_alumnos_deportivas(correo,id_deportivo) VALUES (:usuario, :id)";
                 $stmt = $pdo->prepare($sqlInsertar);
                 $stmt->execute(['usuario' => $alumno, 'id' => $id_seleccionado]);
                 //Actualizar la tabla de actividades deportivas
@@ -62,13 +62,13 @@ $options = [
                 $stmtUpdateNuevo->execute(['id' => $id_seleccionado]);
         }else{
             if($tipo_act == "cultural"){
-                $sqlEliminarInicial = "DELETE FROM actividades_alumnos_culturales WHERE usuario = :usuario AND id_cultural = :id";
+                $sqlEliminarInicial = "DELETE FROM actividades_alumnos_culturales WHERE correo = :usuario AND id_cultural = :id";
                 $stmEliminar = $pdo->prepare($sqlEliminarInicial);
                 $stmEliminar->execute([
                 'usuario' => $alumno,
                 'id' => $id_actividadInicial
                 ]);
-                // 4️⃣ Aumentar capacidad
+                // Aumentar capacidad
                 $sqlUpdate = "
                     UPDATE actividades_culturales
                     SET capacidad = capacidad + 1
@@ -76,11 +76,11 @@ $options = [
                 ";
                 $stmtUpdate = $pdo->prepare($sqlUpdate);
                 $stmtUpdate->execute(['id' => $id_actividadInicial]);
-                // 4️⃣ Insertar nuevo dato
-                $sqlInsertar = "INSERT INTO actividades_alumnos_culturales(usuario,id_cultural) VALUES (:usuario, :id)";
+                // Insertar nuevo dato
+                $sqlInsertar = "INSERT INTO actividades_alumnos_culturales(correo,id_cultural) VALUES (:usuario, :id)";
                 $stmt = $pdo->prepare($sqlInsertar);
                 $stmt->execute(['usuario' => $alumno, 'id' => $id_seleccionado]);
-                //Actualizar la tabla de actividades deportivas
+                // Actualizar la tabla de actividades deportivas
                 $sqlUpdateNueva = "
                     UPDATE actividades_culturales
                     SET capacidad = capacidad - 1
@@ -103,7 +103,7 @@ $options = [
 
 
     }catch(Exception $e){
-        // ❌ Revertir si algo falla
+        // Revertir si algo falla
         if ($pdo->inTransaction()) {
             $pdo->rollBack();
         }

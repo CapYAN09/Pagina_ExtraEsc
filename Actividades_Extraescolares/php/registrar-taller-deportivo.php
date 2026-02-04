@@ -32,7 +32,7 @@ try {
     $dias = $_POST['dias'] ?? '';
     $maestro = $_POST['maestro'] ?? '';
 
-    // 1️⃣ Insertar actividad deportiva
+    // Insertar actividad deportiva
     $sqlInsertActividad = "
         INSERT INTO actividades_deportivas
         (nombre_actividad, lugar_actividad, capacidad, hora_de_inicio, hora_de_fin, dias_de_taller, maestro)
@@ -51,10 +51,10 @@ try {
         'maestro'   => $maestro
     ]);
 
-    // 2️⃣ OBTENER ID DE LA ACTIVIDAD INSERTADA
+    // OBTENER ID DE LA ACTIVIDAD INSERTADA
     $idActividad = $pdo->lastInsertId();
 
-    // 3️⃣ Insertar quién creó la actividad y qué actividad fue
+    // Insertar quién creó la actividad y qué actividad fue
     $sqlInsertAdminActividad = "
         INSERT INTO actividades_admins_deportivas (usuario,id_deportivo)
         VALUES (:usuario,:id_actividad)

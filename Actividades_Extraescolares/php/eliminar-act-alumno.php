@@ -34,17 +34,17 @@ try{
         die("Datos incompletos");
     }
 
-    // 🔒 Iniciar transacción
+    // Iniciar transacción
     $pdo->beginTransaction();
 
     if($tipo_act == "deportivo"){ 
-            $sqlEliminar = "DELETE FROM actividades_alumnos_deportivas WHERE id = :id AND usuario = :usuario";
+            $sqlEliminar = "DELETE FROM actividades_alumnos_deportivas WHERE id = :id AND correo = :usuario";
             $stmEliminar = $pdo->prepare($sqlEliminar);
             $stmEliminar->execute([
                 'id' => $id_actividad,
                 'usuario' => $alumno
             ]);
-            // 4️⃣ Aumentar capacidad
+            // Aumentar capacidad
             $sqlUpdate = "
                 UPDATE actividades_deportivas
                 SET capacidad = capacidad + 1
@@ -54,13 +54,13 @@ try{
             $stmtUpdate->execute(['id' => $id_ActInicial]);
         }else{
             if($tipo_act == "cultural"){
-                $sqlEliminar = "DELETE FROM actividades_alumnos_culturales WHERE id = :id AND usuario = :usuario";
+                $sqlEliminar = "DELETE FROM actividades_alumnos_culturales WHERE id = :id AND correo = :usuario";
                 $stmEliminar = $pdo->prepare($sqlEliminar);
                 $stmEliminar->execute([
                 'id' => $id_actividad,
                 'usuario' => $alumno
                 ]);
-                // 4️⃣ Aumentar capacidad
+                // Aumentar capacidad
                 $sqlUpdate = "
                     UPDATE actividades_culturales
                     SET capacidad = capacidad + 1
@@ -84,7 +84,7 @@ try{
 
 }catch(Exception $e){
 
-    // ❌ Revertir si algo falla
+    // Revertir si algo falla
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }

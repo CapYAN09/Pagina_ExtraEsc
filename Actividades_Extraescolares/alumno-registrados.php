@@ -20,7 +20,7 @@ include "php/act-alumnos.php";
     <div id="topbar">
         <img src="imagenes/logo_ita.png" alt="logo_ita" id="logo">
         <h2 style="color: azure;">Actividades Extraescolares</h2>
-        <button class="regresar" style="color: azure;" onclick="window.location.href='alumno.html'"><h5>Regresar</h5></button>
+        <button class="regresar" style="color: azure;" onclick="window.location.href='/alumno.html'"><h5>Regresar</h5></button>
     </div>
     <div>
         <h1 style="margin-top: 3%;">Talleres Registrados</h1>

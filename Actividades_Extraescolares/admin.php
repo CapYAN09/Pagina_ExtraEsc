@@ -21,8 +21,8 @@ include "php/admin-taller.php";
 </div>
 
 <h1 style="margin-top: 3%;">Crear Taller</h1>
-<button class="opciones" onclick="window.location.href='taller-deportivo.html'">Deportivo</button>
-<button class="opciones" onclick="window.location.href='taller-cultural.html'">Cultural</button>
+<button class="opciones" onclick="window.location.href='/taller-deportivo.html'">Deportivo</button>
+<button class="opciones" onclick="window.location.href='/taller-cultural.html'">Cultural</button>
 
 <h1 style="margin-top: 3%;">Talleres Creados</h1>
 
@@ -138,88 +138,84 @@ include "php/admin-taller.php";
 </table>
 </div>
 
-<!-- ================= MODAL EDITAR ================= -->
+    <!-- ================= MODAL EDITAR ================= -->
 <div class="modal fade" id="exampleModalEdit" tabindex="-1">
-<div class="modal-dialog">
-<div class="modal-content">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="php/editar-act.php" method="POST">
+        <div class="modal-header bg-primary text-white">
+    <h5 class="modal-title">Editar Actividad</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
 
-<form action="php/editar-act.php" method="POST">
+    <div class="modal-body">
+        <input type="hidden" id="editId" name="id">
+        <input type="hidden" id="editTipo" name="tipo">
 
-<div class="modal-header bg-primary text-white">
-<h5 class="modal-title">Editar Actividad</h5>
-<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <label>Actividad</label>
+        <input class="form-control mb-2" id="editActividad" name="actividad">
+
+        <label>Lugar</label>
+        <input class="form-control mb-2" id="editLugar" name="lugar">
+
+        <label>Capacidad</label>
+        <input class="form-control mb-2" id="editCapacidad" name="capacidad">
+
+        <label>Hora inicio</label>
+        <input class="form-control mb-2" id="editInicio" name="inicio" type="time">
+
+        <label>Hora fin</label>
+        <input class="form-control mb-2" id="editFin" name="fin" type="time">
+
+        <label>Días</label>
+        <input class="form-control mb-2" id="editDias" name="dias">
+
+        <label>Maestro</label>
+        <input class="form-control mb-2" id="editMaestro" name="maestro">
+    </div>
+
+    <div class="modal-footer">
+        <button style="width: 110pt;" type="submit" class="btn btn-success">Guardar cambios</button>
+        <button style="width: 110pt;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+    </div>
+
+    </form>
+
+    </div>
+    </div>
 </div>
 
-<div class="modal-body">
-<input type="hidden" id="editId" name="id">
-<input type="hidden" id="editTipo" name="tipo">
+    <!-- ================= MODAL ELIMINAR (SIN CAMBIOS) ================= -->
+    <div class="modal fade" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Eliminar Actividad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+            <div class="modal-body">
 
-<label>Actividad</label>
-<input class="form-control mb-2" id="editActividad" name="actividad">
+            <p><strong>Actividad:</strong> <span id="actividadSeleccionada"></span></p>
+            <p><strong>Lugar:</strong> <span id="actividadLugar"></span></p>
+            <p><strong>Inicio:</strong> <span id="actividadInicio"></span></p>
+            <p><strong>Fin:</strong> <span id="actividadFin"></span></p>
+            <p><strong>Días:</strong> <span id="actividadDias"></span></p>
+            <p><h6>¿Estas seguro que quieres eliminar este taller?</h6></p>
+        </div>
+        <div class="modal-footer">
+        <form action="php/eliminar-act.php" method="POST">
+        <input type="hidden" id="actividadIdInputD" name="id_deportivo">
+        <input type="hidden" id="actividadIdInputC" name="id_cultural">
+        <button style="width: 110pt;" type="submit" class="btn btn-danger">Eliminar</button>
+        <button style="width: 110pt;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </form>
+        </div>
 
-<label>Lugar</label>
-<input class="form-control mb-2" id="editLugar" name="lugar">
+        </div>
+        </div>
+    </div>
 
-<label>Capacidad</label>
-<input class="form-control mb-2" id="editCapacidad" name="capacidad">
-
-<label>Hora inicio</label>
-<input class="form-control mb-2" id="editInicio" name="inicio" type="time">
-
-<label>Hora fin</label>
-<input class="form-control mb-2" id="editFin" name="fin" type="time">
-
-<label>Días</label>
-<input class="form-control mb-2" id="editDias" name="dias">
-
-<label>Maestro</label>
-<input class="form-control mb-2" id="editMaestro" name="maestro">
-</div>
-
-<div class="modal-footer">
-<button style="width: 110pt;" type="submit" class="btn btn-success">Guardar cambios</button>
-<button style="width: 110pt;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-</div>
-
-</form>
-
-</div>
-</div>
-</div>
-
-<!-- ================= MODAL ELIMINAR (SIN CAMBIOS) ================= -->
-<div class="modal fade" id="exampleModal" tabindex="-1">
-<div class="modal-dialog">
-<div class="modal-content">
-
-<div class="modal-header bg-danger text-white">
-<h5 class="modal-title">Eliminar Actividad</h5>
-<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-</div>
-
-<div class="modal-body">
-<p><strong>Actividad:</strong> <span id="actividadSeleccionada"></span></p>
-<p><strong>Lugar:</strong> <span id="actividadLugar"></span></p>
-<p><strong>Inicio:</strong> <span id="actividadInicio"></span></p>
-<p><strong>Fin:</strong> <span id="actividadFin"></span></p>
-<p><strong>Días:</strong> <span id="actividadDias"></span></p>
-<p><h6>¿Estas seguro que quieres eliminar este taller?</h6></p>
-</div>
-
-<div class="modal-footer">
-<form action="php/eliminar-act.php" method="POST">
-<input type="hidden" id="actividadIdInputD" name="id_deportivo">
-<input type="hidden" id="actividadIdInputC" name="id_cultural">
-<button style="width: 110pt;" type="submit" class="btn btn-danger">Eliminar</button>
-<button style="width: 110pt;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-</form>
-</div>
-
-</div>
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 // ===== MODAL EDITAR =====
