@@ -3,11 +3,11 @@ session_start();
 require __DIR__ . '/vendor/autoload.php';
 
 use League\OAuth2\Client\Provider\GenericProvider;
-$tenantId = '63de1475-1a48-4463-aff2-b2581f2a972e';
+$tenantId = '';
 // Configuración Outlook / Microsoft
 $provider = new GenericProvider([
-    'clientId' => '874e3077-bc80-405b-ac6d-9e52f5a27afb', 
-    'clientSecret' => 'ONy8Q~3XwccWD5mmWfAdQdiZ6CystGx.1xNnhcZ5',
+    'clientId' => '', 
+    'clientSecret' => '',
     'redirectUri' => 'https://actividadesextraescolares.aguascalientes.tecnm.mx/ACTIVIDADES_EXTRAESCOLARES/callback.php',
     //'urlAuthorize' => 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
     //'urlAccessToken' => 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
