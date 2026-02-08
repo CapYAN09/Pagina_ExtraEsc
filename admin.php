@@ -21,8 +21,8 @@ include "php/admin-taller.php";
 </div>
 
 <h1 style="margin-top: 3%;">Crear Taller</h1>
-<button class="opciones" onclick="window.location.href='/taller-deportivo.html'">Deportivo</button>
-<button class="opciones" onclick="window.location.href='/taller-cultural.html'">Cultural</button>
+<button class="opciones" onclick="window.location.href='Actividades_Extraescolares/taller-deportivo.html'">Deportivo</button>
+<button class="opciones" onclick="window.location.href='Actividades_Extraescolares/taller-cultural.html'">Cultural</button>
 
 <h1 style="margin-top: 3%;">Talleres Creados</h1>
 
