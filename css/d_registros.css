@@ -1,0 +1,35 @@
+#topbar{
+    background-color: brown;
+    display: flex;
+}
+
+#logo{
+    padding-top: 0.5%;
+    width: 67pt;
+}
+
+h2{
+    color: azure;
+    padding-top: 1%;
+}
+
+.salir{
+    height: 50pt;
+    width: 120pt;
+    border-radius: 5pt;
+    background-color: brown;
+    border: none;
+    margin-left: auto;
+    float: right;
+}
+
+.regresar{
+    margin-left: 5%;
+    height: 50pt;
+    width: 120pt;
+    border-radius: 5pt;
+    background-color: brown;
+    border: none;
+    margin-left: auto;
+    float: right;
+}
