@@ -1,0 +1,181 @@
+@media screen and (max-width: 450px) and (max-height: 950px){
+    h1{
+        background-color: brown;
+        color: white;
+        align-content: center;
+        text-align: center;
+        height: 70pt;  
+    }
+
+    a{
+        color: aliceblue;
+    }
+
+    input{
+        width: 180px;
+        height: 40px;
+        font-size: 12pt;
+        border-radius: 5pt;
+        background-color:azure;
+        border-color: azure;
+        padding-left: 10px;
+    }
+
+    #buttoningresar{
+        width: 180px;
+        height: 40px;
+        font-size: 12pt;
+        border-radius: 5pt;
+        background-color: brown;
+        color: azure;
+    }
+
+    #div-logo{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        padding-top: 3%;
+    }
+
+    img{
+        width: 126pt;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3%;
+    }
+
+    #div-numcontrol{
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        padding-top: 2%;
+    }
+
+    #div-password{
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+    }
+
+    #div-botoningresar{
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    #div-restablecer{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    #contenedor-elementos{
+        justify-content: center;
+        background-color:slategrey;
+        border-radius: 10pt;
+        height: 320pt;
+        margin-top: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    body{
+        margin: 0;
+        min-height: 100vh;
+        background-image: url("../imagenes/fondoaguila.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 1800px) and (max-height: 950px) and (min-width: 451px){
+    h1{
+        background-color: brown;
+        color: white;
+        align-content: center;
+        text-align: center;
+        height: 70pt;
+    }
+
+    a{
+        color: aliceblue;
+    }
+
+    input{
+        width: 380px;
+        height: 40px;
+        font-size: 12pt;
+        border-radius: 5pt;
+        background-color:azure;
+        border-color: azure;
+        padding-left: 10px;
+    }
+
+    #buttoningresar{
+        width: 380px;
+        height: 40px;
+        font-size: 12pt;
+        border-radius: 5pt;
+        background-color: brown;
+        color: azure;
+    }
+
+    #div-logo{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        padding-top: 3%;
+    }
+
+    img{
+        width: 126pt;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3%;
+    }
+
+    #div-numcontrol{
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        padding-top: 2%;
+    }
+
+    #div-password{
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+    }
+
+    #div-botoningresar{
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    #div-restablecer{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    #contenedor-elementos{
+        justify-content: center;
+        background-color:slategrey;
+        border-radius: 10pt;
+        height: 320pt;
+        margin-top: 5%;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    body{
+        margin: 0;
+        min-height: 100vh;
+        background-image: url("../imagenes/fondoaguila.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

@@ -1,0 +1,101 @@
+#topbar{
+    background-color: brown;
+    display: flex;
+}
+
+#logo{
+    padding-top: 0.5%;
+}
+
+img{
+    width: 67pt;
+}
+
+h2{
+    color: azure;
+    padding-top: 1%;
+}
+
+h1{
+    margin-left: 5%;
+}
+
+.opciones{
+    margin-left: 5%;
+    height: 50pt;
+    width: 120pt;
+    border-radius: 5pt;
+}
+
+.salir{
+    margin-left: 5%;
+    height: 50pt;
+    width: 120pt;
+    border-radius: 5pt;
+    background-color: brown;
+    border: none;
+    margin-left: auto;
+    float: right;
+}
+
+input{
+    margin-left: 5%;
+    width: 380px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 5pt;
+    border-color: black;
+}
+
+button{
+    margin-left: 5%;
+    width: 380px;
+    height: 40px;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 5pt;
+}
+
+#talleres{
+    margin-left: 5%;
+}
+
+#btn-inscribirse{
+    width: 56%;
+}
+
+.botones{
+    width: 65pt;
+    height: 18pt;
+    justify-content: center;
+}
+
+td{
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.primer-fila{
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    width: 145px;
+}
+
+#fila-inicio{
+    background-color: darkgrey;
+}
+
+#filas-tabla{
+    background-color: gainsboro;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("../imagenes/fondoaguila.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
